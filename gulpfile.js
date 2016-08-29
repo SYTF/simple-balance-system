@@ -58,6 +58,7 @@ elixir(function(mix) {
       'js/vue.min.js',
       'js/vue-resource.min.js',
       'js/datepicker.min.js',
+      'js/pace.js'
     ],
     'public/assets/js/site.js',
     'resources/assets'
