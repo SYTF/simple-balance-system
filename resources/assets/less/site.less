@@ -1,0 +1,153 @@
+@import "bootstrap/bootstrap";
+@import "//fonts.googleapis.com/css?family=Lato|Source+Code+Pro:400,300";
+@import "//fonts.googleapis.com/earlyaccess/cwtexhei.css";
+
+@font-weight: 300;
+@font-family-sans-serif: "Lato", "cwTeXHei", sans-serif;
+
+body{
+  font-family: @font-family-sans-serif;
+  font-weight: @font-weight;
+  background-color: #333333;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+}
+
+input {
+  color: #333333;
+}
+
+legend {
+  color: #FFFFFF;
+}
+
+.transaction-history {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  div {
+    font-family: @font-family-sans-serif !important;
+  }
+  div.deposit {
+    color: #4CAF50;
+  }
+  div.withdraw {
+    color: #F44336;
+  }
+}
+
+div.container {
+  width: 90%;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 98%;
+  }
+}
+
+div.loginContainer {
+  width: 400px;
+  margin: 0 auto;
+  input:not([type='checkbox']) {
+    width: 100%;
+  }
+  @media (max-width: 768px){
+    width: 100%;
+  }
+}
+
+.fixSummary {
+  padding: 8px;
+  background-color: #FF9900;
+  color: #FFFFFF;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  line-height: 30px;
+}
+
+.button-success, .button-error, .button-warning, .button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+  background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+  background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.card {
+  margin: 1em .2em;
+    border: 1px solid rgba(0,0,0, 0.1);
+}
+
+.card-container {
+    padding: 2px 16px;
+}
+
+.summaryValue {
+  font-size: 3.5em;
+}
+
+.input-div {
+  margin: 5px 0;
+}
+
+.itemDescription, .amount {
+  width: 100%;
+}
+
+span.error_msg {
+  font-family: 'Source Code Pro', "cwTeXHei", sans-serif;
+  background-color: #FF0000;
+  color: #FFFFFF;
+  padding: 8px 8px;
+}
+
+hr {
+  border: 0px;
+  height: 1px;
+  background-color: rgba(0,0,0, 0.1);
+}
+
+div.footer nav li {
+  list-style: none;
+  a {
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: 'Source Code Pro', sans-serif;
+  }
+  a:hover {
+    color: #FFFFFF;
+  }
+}
+
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+  margin-right: 2em;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(../../images/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="radio"]:checked + label span {
+    background:url(../../images/check_radio_sheet.png) -19px top no-repeat;
+}

@@ -1,0 +1,14 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+
+/resources/assets/less/bootstrap/*
+/resources/assets/js/bootstrap.js
+/resources/assets/js/datepicker.min.js
+/resources/assets/js/vue.min.js
+/resources/assets/js/vue-resource.min.js
+/resources/assets/js/jquery.js
+/resources/assets/css/datepicker.min.css
