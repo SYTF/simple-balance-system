@@ -35,11 +35,11 @@
         <input id="recordDate" name="recordDate" v-model="recordDate" class="datepicker-here" data-autoClose='true' data-language='en' data-date-format="yyyy-mm-dd" value="{{ old('recordDate') }}"></input>
       </div>
       <button class="pure-button pure-button-primary" v-on:click="saveRecord()">Save</button>
-      @if($errors->count() > 0)
-          <div class="">
-            <span class="error_msg"> <i class="fa fa-exclamation-circle"></i> {{ $errors->first() }}</span>
-          </div>
-      @endif
+
+      <div class="" v-if="error_messages">
+        <span class="error_msg"> <i class="fa fa-exclamation-circle"></i> @{{ error_messages }}</span>
+      </div>
+
   </div>
 </div>
 @endif

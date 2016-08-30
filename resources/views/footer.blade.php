@@ -11,7 +11,8 @@ new Vue({
     recordDate : null,
     recordType : null,
     itemDescription : null,
-    amount : null
+    amount : null,
+    error_messages : null,
   },
   methods : {
     getRewardList : function(_url)
@@ -31,6 +32,7 @@ new Vue({
           this.getRewardList(this.firstPageUrl);
         }, (response) => {
           var errMsg = response.json();
+          this.error_messages = errMsg[Object.keys(errMsg)[0]];
         });
         return false;
     },
