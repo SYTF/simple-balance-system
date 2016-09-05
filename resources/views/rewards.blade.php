@@ -29,17 +29,15 @@
         <input id="itemDescription" name="itemDescription" v-model="itemDescription" class="itemDescription" type="text" placeholder="{{ trans('rewards.input.itemDescription') }}" value="{{ old('itemDescription') }}">
       </div>
       <div class="input-div">
-        <input id="amount" name="amount" v-model="amount" type="text" class="amount" placeholder="0.00" value="{{ old('amount') }}">
+        <input id="amount" name="amount" v-model="amount" type="number" class="amount" placeholder="0.00" value="{{ old('amount') }}">
       </div>
       <div class="input-div">
         <input id="recordDate" name="recordDate" v-model="recordDate" class="datepicker-here" data-autoClose='true' data-language='en' data-date-format="yyyy-mm-dd" value="{{ old('recordDate') }}"></input>
       </div>
       <button class="pure-button pure-button-primary" v-on:click="saveRecord()">Save</button>
-
-      <div class="" v-if="error_messages">
+      <div class="error_msg_container" v-if="error_messages">
         <span class="error_msg"> <i class="fa fa-exclamation-circle"></i> @{{ error_messages }}</span>
       </div>
-
   </div>
 </div>
 @endif
