@@ -7,8 +7,8 @@
   <meta name="author" content="Simon Yeung">
   <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
   <meta name="csrf_token" id="csrf_token" content="{{ csrf_token() }}" v-model="token">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
   <link rel="stylesheet" href="{{ asset('assets/css/site.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/siteOthers.css') }}">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
