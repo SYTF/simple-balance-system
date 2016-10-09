@@ -23,11 +23,8 @@ class RewardController extends Controller
         if($rewardList->count() > 0){
           $lastTransaction = Reward::orderBy('recordDate', 'desc')->first()->recordDate;
 
-          $current_balance_tmp = Cache::remember('current_balance', 30, function(){
-            return DB::select('SELECT SUM(`amount`) as `balance` FROM `rewardRecords`;');
-          });
+          $current_balance = $this->getCurrentBalance();
 
-          $current_balance = $current_balance_tmp[0]->balance;
         }else{
           $lastTransaction = 'N/a';
           $current_balance = '0';
@@ -81,7 +78,7 @@ class RewardController extends Controller
       /*Clean Cache*/
       Cache::forget('current_balance');
 
-      return redirect('rewards');
+      return Response()->json(['newBalance' => $this->getCurrentBalance()]);
     }
 
     /**
@@ -127,5 +124,12 @@ class RewardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getCurrentBalance(){
+        $current_balance_tmp = Cache::remember('current_balance', 30, function(){
+          return DB::select('SELECT SUM(`amount`) as `balance` FROM `rewardRecords`;');
+        });
+        return $current_balance_tmp[0]->balance;
     }
 }

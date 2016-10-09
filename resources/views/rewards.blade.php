@@ -5,7 +5,7 @@
 <div class="fixSummary">
   <div class="pure-g">
     <div class="pure-u-2-3">
-      {{ trans('rewards.outstanding_balance') }} : $ {{ number_format($currentBalance, 2) }}
+      {{ trans('rewards.outstanding_balance') }} : $ <span>@{{ currentBalance }}</span>
     </div>
     <div class="pure-u-1-3">
       <button type="button" name="button" class="pure-button pure-button-primary button-error pull-right" v-on:click="signOut()">Sign-out</button>

@@ -6,6 +6,7 @@ new Vue({
     firstPageUrl :  '{{ url('getRewardList?page=1') }}',
     nextPageUrl : '{{ url('getRewardList?page=1') }}',
     previousPageUrl : null,
+    currentBalance: <?php echo $currentBalance; ?>,
     token : null,
     // form elements
     recordDate : null,
@@ -30,6 +31,7 @@ new Vue({
         .then((response) => {
           this.amount = this.itemDescription = null;
           this.getRewardList(this.firstPageUrl);
+          this.currentBalance = response.json().newBalance;
         }, (response) => {
           var errMsg = response.json();
           this.error_messages = errMsg[Object.keys(errMsg)[0]];
