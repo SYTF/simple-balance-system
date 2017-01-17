@@ -32,6 +32,7 @@ new Vue({
           this.amount = this.itemDescription = null;
           this.getRewardList(this.firstPageUrl);
           this.currentBalance = response.json().newBalance;
+          this.$message('Record Saved.');
         }, (response) => {
           var errMsg = response.json();
           this.error_messages = errMsg[Object.keys(errMsg)[0]];
@@ -46,17 +47,13 @@ new Vue({
         });
     }
   },
+  filters: {
+    customDate: function(value){
+        return moment(value).format('YYYY-MM-DD');
+    }
+  },
   ready : function () {
     this.getRewardList(this.nextPageUrl);
   }
-});
-
-Vue.filter('customDate', function(value){
-  var _date_arr = value.split(/[- :]/);
-  var _date = new Date(_date_arr[0], _date_arr[1], _date_arr[2], _date_arr[3], _date_arr[4], _date_arr[5]);
-  return (_date.getFullYear() + '-' + _date.getMonth() + '-' + _date.getDate())
-    .replace(/\d+/g, function(m){
-      return "0".substr(m.length - 1) + m;
-    });
 });
 </script>
