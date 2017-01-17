@@ -50,6 +50,9 @@ new Vue({
   filters: {
     customDate: function(value){
         return moment(value).format('YYYY-MM-DD');
+    },
+    numberWithComma: function(value){
+        return value.toLocaleString();
     }
   },
   ready : function () {

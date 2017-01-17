@@ -5,7 +5,7 @@
 <div class="fixSummary">
   <div class="pure-g">
     <div class="pure-u-2-3">
-      {{ trans('rewards.outstanding_balance') }} : $ <span>@{{ currentBalance }}</span>
+      {{ trans('rewards.outstanding_balance') }} : $ <span>@{{ currentBalance | numberWithComma }}</span>
     </div>
     <div class="pure-u-1-3">
       <button type="button" name="button" class="pure-button pure-button-primary button-error pull-right" v-on:click="signOut()">Sign-out</button>
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-@if(Auth::user()->name == 'admin')
+@if(Auth::user()->name == 'Simon Yeung')
 <div class="card" style="margin-top: 4em;">
   <div class="card-container">
     <h4>{{trans('rewards.input.legend')}}</h4>
@@ -49,7 +49,7 @@
     <div class="pure-g transaction-history" v-for="item in rewardList">
       <div class="pure-u-1-3">@{{ item.recordDate | customDate }}</div>
       <div class="pure-u-1-2">@{{ item.item }}</div>
-      <div class="pure-u-1-6 @{{ (item.type == 1 ) ? 'deposit' : 'withdraw' }}"><div class=" pull-right">@{{ item.amount }}</div></div>
+      <div class="pure-u-1-6 @{{ (item.type == 1 ) ? 'deposit' : 'withdraw' }}"><div class=" pull-right">@{{ item.amount | numberWithComma }}</div></div>
     </div>
 
     <div class="pure-g">
