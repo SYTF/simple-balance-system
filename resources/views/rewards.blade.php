@@ -13,7 +13,7 @@
   </div>
 </div>
 
-@if(Auth::user()->name == 'Simon Yeung')
+@if(Auth::user()->hasRole('admin'))
 <div class="card" style="margin-top: 4em;">
   <div class="card-container">
     <h4>{{trans('rewards.input.legend')}}</h4>
