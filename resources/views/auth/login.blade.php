@@ -26,5 +26,9 @@
         <span class="error_msg"> <i class="fa fa-exclamation-circle"></i> {{ $errors->first() }}</span>
       </div>
   @endif
+
+  <hr />
+
+  <a href="{{ route('facebook.login') }}">Login with Facebook</a>
 </div>
 @endsection

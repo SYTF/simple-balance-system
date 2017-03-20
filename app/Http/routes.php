@@ -12,12 +12,12 @@
 */
 
 Route::group(['middleware' => ['auth']], function (){
-  Route::get('/', function () {
-      return redirect('rewards');
-  });
+  // Route::get('/', function () {
+  //     return redirect('rewards');
+  // });
 
-
-  Route::resource('rewards', 'RewardController');
+  Route::resource('/', 'RewardController');
+  // Route::resource('rewards', 'RewardController');
 });
 Route::get('/getRewardList', function(App\Reward $rewards){
   return response()->json( $rewards->orderby('created_at', 'desc')->paginate(10) );
@@ -25,3 +25,6 @@ Route::get('/getRewardList', function(App\Reward $rewards){
 
 
 Auth::routes();
+
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider')->name('facebook.login');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
